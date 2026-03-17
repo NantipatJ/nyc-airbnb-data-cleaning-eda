@@ -15,6 +15,14 @@ This project focuses on the end-to-end data cleaning process of the 2019 New Yor
     * **Solution:** Imputed 0 for `reviews_per_month` (assuming no activity) and converted `last_review` to a proper datetime format, maintaining `NaT` for missing entries to ensure analytical integrity.
 * **Outlier Detection & Mitigation:**
     * **Price:** Discovered listings with a price of $0 (data entry errors) and extreme values up to $10,000. Filtered the dataset to include listings between $10 - $1,000 to focus on the general market.
+    
+    *(Note: Displaying the impact of extreme outliers and the distribution after cleaning)*
+    > **Before Cleaning:**
+    > ![Price Boxplot Before Clean](images/price_before_clean_boxplot.png)
+    > 
+    > **After Cleaning:**
+    > ![Price Boxplot After Clean](images/price_after_clean_boxplot.png)
+
     * **Minimum Nights:** Found extreme outliers (up to 1,250 nights). Standardized the dataset to listings with a 30-night maximum to align with short-term rental trends.
 * **Data Integrity & Consistency:**
     * Validated categorical columns (`neighbourhood_group`, `room_type`) to ensure no spelling inconsistencies or formatting issues existed.
@@ -26,10 +34,14 @@ This project focuses on the end-to-end data cleaning process of the 2019 New Yor
 1.  **Dataset Optimization:** Reduced the noise in the dataset while retaining 98% of the original data (47,924 high-quality rows).
 2.  **Improved Accuracy:** Normalized the average price from a highly skewed figure to a more realistic market average of $141.31 per night.
 3.  **Actionable Insight:** The cleaned data revealed that Manhattan remains the most expensive borough with an average price of $179.17, while the Bronx offers the most affordable stays at $85.56.
+    
+    > **Average Price by Neighbourhood Group:**
+    > ![Average Price Barchart](images/average_price_by_neighbourhood_area_barchart.png)
 
 ---
 
 ## 💻 Tools Used
 * **Python:** Pandas for data manipulation.
-* **Visualization:** Matplotlib and Seaborn for outlier detection (Boxplots).
+* **Visualization:** Matplotlib and Seaborn for outlier detection (Boxplots) and insight visualization (Barcharts).
+* **Environment:** Google Colab / Jupyter Notebook.xplots).
 * **Environment:** Google Colab.
